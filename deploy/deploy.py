@@ -85,7 +85,7 @@ try:
 
   # Submit integration test job to Databricks REST API
   #res = jobs_service.submit_run(run_name="xxx", new_cluster=json.loads(new_cluster_config),  notebook_task=notebook_task, )
-  res = jobs_service.submit_run(run_name="xxx", existing_cluster=existing_cluster_id,  notebook_task=notebook_task, )
+  res = jobs_service.submit_run(run_name="xxx", existing_cluster_id=existing_cluster_id,  notebook_task=notebook_task, )
   run_id = res['run_id']
   print(run_id)
 
