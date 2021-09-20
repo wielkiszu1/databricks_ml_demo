@@ -20,6 +20,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,7 +38,7 @@ jobs:
 
       - name: Deploy integration test
         run: |
-          python deploy/deploy.py  --branch_name $(Build.SourceBranchName) --pr_branch $(System.PullRequest.SourceBranch)
+          python deploy/deploy.py  --branch_name ${{ steps.extract_branch.outputs.branch }} --pr_branch   
 
 
 
