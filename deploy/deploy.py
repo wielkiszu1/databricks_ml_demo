@@ -7,7 +7,7 @@
 
 new_cluster_config = """
 {
-    "spark_version": "7.3.x-scala2.12",
+    "spark_version": "9.0.x-cpu-ml-scala2.12",
     "node_type_id": "i3.xlarge",
     "aws_attributes": {
       "availability": "ON_DEMAND"
@@ -84,7 +84,7 @@ try:
   #new_cluster = json.loads(new_cluster_config)
 
   # Submit integration test job to Databricks REST API
-  res = jobs_service.submit_run(run_name="xxx", existing_cluster_id=existing_cluster_id,  notebook_task=notebook_task, )
+  res = jobs_service.submit_run(run_name="xxx", new_cluster=new_cluster_config,  notebook_task=notebook_task, )
   run_id = res['run_id']
   print(run_id)
 
