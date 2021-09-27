@@ -5,6 +5,11 @@
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC # This is my markdown header
+
+# COMMAND ----------
+
 new_cluster_config = """
 {
     "spark_version": "9.0.x-cpu-ml-scala2.12",
