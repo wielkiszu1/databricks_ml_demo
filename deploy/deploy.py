@@ -1,8 +1,9 @@
 # Databricks notebook source
-#import os
+import os
 #os.environ['DATABRICKS_HOST'] = 'https://eastus2.azuredatabricks.net/'
 #os.environ['DATABRICKS_TOKEN'] = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().getOrElse(None)
-
+os.environ['DATABRICKS_HOST'] = https://adb-5260745850381774.14.azuredatabricks.net
+os.environ['DATABRICKS_TOKEN'] = dbutils.notebook.entry_point.getDbutils().notebook().getContext().apiToken().getOrElse(None)
 # COMMAND ----------
 
 new_cluster_config = """
@@ -19,11 +20,14 @@ new_cluster_config = """
 existing_cluster_id = '0804-220509-stead130'
 # Path to the notebook with the integration test
 notebook_path = '/test/unittest_model'
-repo_path = '/Repos/michael.shtelma@databricks.com/databricks_ml_demo'
+# repo_path = '/Repos/michael.shtelma@databricks.com/databricks_ml_demo'
+repo_path = '/Repos/ckonsur@gmail.com/databricks_ml_demo'
 
 
-repos_path_prefix='/Repos/michael.shtelma@databricks.com/databricks_ml_demo'
-git_url = 'https://github.com/mshtelma/databricks_ml_demo'
+# repos_path_prefix='/Repos/michael.shtelma@databricks.com/databricks_ml_demo'
+repos_path_prefix='/Repos/ckonsur@gmail.com/databricks_ml_demo'
+# git_url = 'https://github.com/mshtelma/databricks_ml_demo'
+git_url='https://github.com/wielkiszu1/databricks_ml_demo'
 provider = 'gitHub'
 branch = 'main'
 
